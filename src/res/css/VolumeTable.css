@@ -1,0 +1,15 @@
+
+
+.volume__table table{width: 100%; margin-top: 30px;}
+.volume__table table caption{display: none;}
+.volume__table table thead tr th{opacity: 0.7; font-size: 12px; line-height: 20px;}
+.volume__table table tbody tr td div{text-align: center;margin-top: 5px;}
+.volume__table table tbody tr td div input{width: 30px; height: 30px;}
+.volume__table table tbody tr td div.volume__table--weight input,
+.volume__table table tbody tr td div.volume__table--amount input{width: 60px;}
+.volume__table--name{line-height: 25px;font-size: 18px; font-weight: 700;}
+.volume__table--name input{width: 70%;height: 35px;text-align: left;padding: 0 10px; box-sizing: border-box;}
+.volume__table--volume{margin:10px 0;}
+.volume__table--volume .yellow{color: var(--mainYellow);}
+.volume__table--volume .gray{opacity: 0.7; font-size: 12px;}
+.volume__table table tbody tr td div.volume__table--set input{color: var(--mainGray2);}

@@ -1,0 +1,8 @@
+
+
+.volume__result{display: flex;justify-content: space-around; margin-top: 30px;}
+.volume__result li dl{text-align: center;}
+.volume__result li dt{font-size: 20px; font-weight: 700;}
+.volume__result li dt span{font-size: 12px; color: var(--mainRed); margin-left: 2px;}
+.volume__result li dd{font-size: 12px; margin-top: 5px; opacity: 0.7;}
+
