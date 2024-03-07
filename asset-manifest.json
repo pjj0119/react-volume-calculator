@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-volume-calculator/static/css/main.b3a88e7d.css",
+    "main.css": "/react-volume-calculator/static/css/main.48a499f8.css",
     "main.js": "/react-volume-calculator/static/js/main.dae81982.js",
     "static/js/592.a34548ba.chunk.js": "/react-volume-calculator/static/js/592.a34548ba.chunk.js",
     "index.html": "/react-volume-calculator/index.html",
-    "main.b3a88e7d.css.map": "/react-volume-calculator/static/css/main.b3a88e7d.css.map",
+    "main.48a499f8.css.map": "/react-volume-calculator/static/css/main.48a499f8.css.map",
     "main.dae81982.js.map": "/react-volume-calculator/static/js/main.dae81982.js.map",
     "592.a34548ba.chunk.js.map": "/react-volume-calculator/static/js/592.a34548ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3a88e7d.css",
+    "static/css/main.48a499f8.css",
     "static/js/main.dae81982.js"
   ]
 }
