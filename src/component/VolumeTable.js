@@ -7,37 +7,64 @@ import VolumeBtn from './VolumeBtn'
 function VolumeTable() {
 	
 	// 로컬 스토리지에서 데이터를 불러올 때 초기값을 설정
-	const initialAdd = JSON.parse(localStorage.getItem('add')) || [{ id: 1, storageKey: 1 }];
-  
+	
+	const initExercise = JSON.parse(localStorage.getItem('ExerciseArry')) || [{ ExerciseNum: 1}];
+
 	// 운동
-	const [add, setAdd] = useState(initialAdd);
-  
+	const [exercise, setExercise] = useState(initExercise);
+
 	// useEffect를 사용하여 add 상태가 변경될 때마다 로컬 스토리지에 저장
 	useEffect(() => {
-	  localStorage.setItem('add', JSON.stringify(add));
-	}, [add]);
+	  localStorage.setItem('ExerciseArry', JSON.stringify(exercise));
+	}, [exercise]);
 	
+
 	// 운동추가
-	const addBtn = (e) => {	
+	const exerciseAddBtn = (e) => {  
 		e.preventDefault();
-		const NewAdd = {id: add.length + 1 ,storageKey :add.length + 1 };
-		setAdd([...add, NewAdd])
-	}
+		const newExercise = { ExerciseNum: exercise.length + 1};
+		const newExerciseName = { ['ExerciseName' + (parseInt(exercise.length) + 1)]: "" };  // 초기 값 설정
+		setExercise([...exercise, newExercise]);
+		setExerciseName([...exerciseName, newExerciseName]);
+	  };
 	// 운동삭제
-	const delteBtn = (e) => {
+	const exerciseDelteBtn = (e) => {
 		e.preventDefault();
-		const newDelete = add.slice(0, -1);
-		if(add.length > 1){
-			setAdd(newDelete);
-			localStorage.removeItem("storageKey" + add.length);
+		//const newDelete = exercise.slice(0, -1);
+		if(exercise.length > 1){
+			setExercise(exercise.slice(0, -1));
+			setExerciseName(exerciseName.slice(0, -1));
+			localStorage.removeItem("ExerciseNum" + exercise.length);
+			localStorage.removeItem("ExerciseName" + exercise.length);
 		}
-		
 	}
+	// 운동종목입력창
+	
+	const initExerciseName = JSON.parse(localStorage.getItem('ExerciseNameArry')) || [{ ExerciseName1: ""}];
+	
+
+	const [exerciseName, setExerciseName] = useState(initExerciseName);
+	
+	useEffect(() => {
+		localStorage.setItem('ExerciseNameArry', JSON.stringify(exerciseName));
+	}, [exerciseName, exercise.length]);
+
+		
+	const handleExerciseNameChange = (exerciseNum, newExerciseName) => {
+		setExerciseName((prevExerciseName) => {
+		  const updatedExerciseName = [...prevExerciseName];
+		  updatedExerciseName[exerciseNum - 1] = { ['ExerciseName' + exerciseNum]: newExerciseName };
+		  return updatedExerciseName;
+		});
+	};
+	
+	
+
   return (
 	<>
 		<div className='volume__table'>
-			{add.map(add => (
-				<table key={add.id}>
+			{exercise.map(exercise => (
+				<table key={exercise.exerciseNum}>
 					<caption>세트, KG, 횟수, 완료</caption>
 					<colgroup>
 						<col/>
@@ -45,39 +72,19 @@ function VolumeTable() {
 						<col style={{width:'30%'}}/>
 						<col/>
 					</colgroup>
-					<thead>
-						<tr>
-							<td colSpan={4}>
-								<div className="volume__table--name">
-									<input type="text" placeholder='종목'/>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colSpan={4}>
-									<p className='volume__table--volume'><span className="yellow">볼륨</span>0 <span className="gray">kg</span></p>
-								</td>
-							</tr>
-						<tr>
-							<th>세트</th>
-							<th>KG</th>
-							<th>횟수</th>
-							<th>완료</th>
-						</tr>
-					</thead>
-					<tbody>
-						<VolumeTableItem 
-							add = {add.storageKey}
-						></VolumeTableItem>
-					</tbody>
+					<VolumeTableItem 
+						exerciseNum={exercise.ExerciseNum}
+						exerciseName={exerciseName[exercise.ExerciseNum - 1]}
+						handleExerciseNameChange={handleExerciseNameChange}
+					></VolumeTableItem>
 				</table>
 				
 			))}
 		</div>
 		
 		<VolumeBtn
-			addBtn = {addBtn}
-			delteBtn = {delteBtn}
+			exerciseAddBtn = {exerciseAddBtn}
+			exerciseDelteBtn = {exerciseDelteBtn}
 		></VolumeBtn>
 	</>
   )

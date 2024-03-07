@@ -1,6 +1,7 @@
 import './App.css';
 import VolumeTop from './component/VolumeTop';
 import VolumeTable from './component/VolumeTable'
+import "./res/css/VolumeTable.css";
 
 function App() {
 
