@@ -5,13 +5,19 @@
 		--mainRed: #c11a1a;
 		--mainYellow: rgb(255,215,0);
 		--mainGray: #444;
-		--mainGray2: #999;
+		--mainGray2: #bbb;
 		--mainGreen: green;
+		--mainPurple : #b942b9;
 }
 ul,li{list-style: none;}
 a{text-decoration: none;}
 
 body{line-height: 1; font-size: 15px; background-color: var(--mainBlack); color: var(--mainWhite);}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 input[type="text"],
 input[type="number"]{background-color: var(--mainGray); border: 0;text-align: center; border-radius: 5px; color: var(--mainWhite); font-weight: 700;}
 input[type="checkbox"]{
@@ -34,4 +40,6 @@ input[type="checkbox"]:checked + label::after{
 	position: absolute;
 	left: 0;
 	top:0;
+	color: var(--mainWhite);
+	z-index: 1;
 }

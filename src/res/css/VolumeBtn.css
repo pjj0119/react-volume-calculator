@@ -9,6 +9,7 @@
 .volume__btn--setDelte{color: var(--mainYellow);}
 .volume__btn--add{color: var(--mainGreen);}
 .volume__btn--finish{color: var(--mainWhite);}
+.volume__btn--delte{color: var(--mainPurple);}
 
 table .volume__btn > li{margin-bottom: 5px;}
 
