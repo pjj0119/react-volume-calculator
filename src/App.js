@@ -2,6 +2,7 @@ import './App.css';
 import VolumeTop from './component/VolumeTop';
 import VolumeTable from './component/VolumeTable'
 import "./res/css/VolumeTable.css";
+import React from 'react'
 
 function App() {
 
@@ -20,3 +21,5 @@ function App() {
 }
 
 export default App;
+
+

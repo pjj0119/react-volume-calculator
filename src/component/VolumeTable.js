@@ -64,7 +64,7 @@ function VolumeTable() {
 	<>
 		<div className='volume__table'>
 			{exercise.map(exercise => (
-				<table key={exercise.exerciseNum}>
+				<table key={exercise}>
 					<caption>세트, KG, 횟수, 완료</caption>
 					<colgroup>
 						<col/>
